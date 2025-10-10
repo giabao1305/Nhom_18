@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           targetNamespace="https://www.w3schools.com"
+           xmlns="https://www.w3schools.com"
+           elementFormDefault="qualified">
+
+  <!--  Simple types / enums  -->
+  <xs:simpleType name="idInt">
+    <xs:restriction base="xs:integer"/>
+  </xs:simpleType>
+
+  <xs:simpleType name="genderEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="nam"/>
+      <xs:enumeration value="nu"/>
+      <xs:enumeration value="khac"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="chedoNhom">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="cong_khai"/>
+      <xs:enumeration value="ban_be"/>
+      <xs:enumeration value="bi_mat"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="chedoHienThi">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="cong_khai"/>
+      <xs:enumeration value="ban_be"/>
+      <xs:enumeration value="riêng_tư"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="vaiTroEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="admin"/>
+      <xs:enumeration value="mod"/>
+      <xs:enumeration value="member"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="trangThaiEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="active"/>
+      <xs:enumeration value="pending"/>
+      <xs:enumeration value="blocked"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="followTrangThai">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="chap_nhan"/>
+      <xs:enumeration value="cho_duyet"/>
+      <xs:enumeration value="chan"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="reactionEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="thich"/>
+      <xs:enumeration value="wow"/>
+      <xs:enumeration value="tym"/>
+      <xs:enumeration value="tuc_gian"/>
+      <xs:enumeration value="buon"/>
+      <xs:enumeration value="cuoi"/>
+      <xs:enumeration value="care"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <xs:simpleType name="targetTypeEnum">
+    <xs:restriction base="xs:string">
+      <xs:enumeration value="bai_viet"/>
+      <xs:enumeration value="binh_luan"/>
+    </xs:restriction>
+  </xs:simpleType>
+
+  <!--  Root  -->
+  <xs:element name="mangxh">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="user" type="userType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="group" type="groupType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="group_detail" type="groupDetailType"  minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="post" type="postType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="comment" type="commentType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="follow" type="followType" minOccurs="0" maxOccurs="unbounded"/>
+        <xs:element name="reaction" type="reactionType" minOccurs="0" maxOccurs="unbounded"/>
+      </xs:sequence>
+    </xs:complexType>
+
+    <!--  Keys  -->
+    <xs:key name="user_key">
+      <xs:selector xpath="user"/>
+      <xs:field xpath="user_id"/>
+    </xs:key>
+
+    <xs:key name="group_key">
+      <xs:selector xpath="group"/>
+      <xs:field xpath="group_id"/>
+    </xs:key>
+
+    <xs:key name="membership_key">
+      <xs:selector xpath="group_detail"/>
+      <xs:field xpath="group_membership_id"/>
+    </xs:key>
+
+    <xs:key name="post_key">
+      <xs:selector xpath="post"/>
+      <xs:field xpath="post_id"/>
+    </xs:key>
+
+    <xs:key name="comment_key">
+      <xs:selector xpath="comment"/>
+      <xs:field xpath="comment_id"/>
+    </xs:key>
+
+    <xs:key name="follow_key">
+      <xs:selector xpath="follow"/>
+      <xs:field xpath="follow_id"/>
+    </xs:key>
+
+    <xs:key name="reaction_key">
+      <xs:selector xpath="reaction"/>
+      <xs:field xpath="reaction_id"/>
+    </xs:key>
+
+    <!--  Foreign keys  -->
+    <xs:keyref name="group_owner_fk" refer="user_key">
+      <xs:selector xpath="group"/>
+      <xs:field xpath="owner_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="membership_group_fk" refer="group_key">
+      <xs:selector xpath="group_detail"/>
+      <xs:field xpath="group_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="membership_user_fk" refer="user_key">
+      <xs:selector xpath="group_detail"/>
+      <xs:field xpath="user_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="post_author_fk" refer="user_key">
+      <xs:selector xpath="post"/>
+      <xs:field xpath="author_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="comment_post_fk" refer="post_key">
+      <xs:selector xpath="comment"/>
+      <xs:field xpath="post_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="comment_author_fk" refer="user_key">
+      <xs:selector xpath="comment"/>
+      <xs:field xpath="author_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="comment_parent_fk" refer="comment_key">
+      <xs:selector xpath="comment"/>
+      <xs:field xpath="parent_comment_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="follow_follower_fk" refer="user_key">
+      <xs:selector xpath="follow"/>
+      <xs:field xpath="follower_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="follow_followee_fk" refer="user_key">
+      <xs:selector xpath="follow"/>
+      <xs:field xpath="followee_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="reaction_user_fk" refer="user_key">
+      <xs:selector xpath="reaction"/>
+      <xs:field xpath="reactor_id"/>
+    </xs:keyref>
+
+    <xs:keyref name="reaction_post_fk" refer="post_key">
+    <xs:selector xpath="reaction"/>
+        <xs:field xpath="target_post_id"/>
+</xs:keyref>
+
+  <xs:keyref name="reaction_comment_fk" refer="comment_key">
+  <xs:selector xpath="reaction"/>
+  <xs:field xpath="target_comment_id"/>
+</xs:keyref>
+  </xs:element>
+
+  <!--  Complex types  -->
+  <xs:complexType name="userType">
+    <xs:sequence>
+      <xs:element name="user_id" type="idInt"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="matkhau" type="xs:string"/>
+      <xs:element name="ngaytao" type="xs:dateTime"/>
+      <xs:element name="trangthai" type="xs:byte"/>
+      <xs:element name="tenhienthi" type="xs:string"/>
+      <xs:element name="avatar" type="xs:string" minOccurs="0"/>
+      <xs:element name="bio" type="xs:string" minOccurs="0"/>
+      <xs:element name="ngaysinh" type="xs:date" minOccurs="0"/>
+      <xs:element name="gioitinh" type="genderEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="groupType">
+    <xs:sequence>
+      <xs:element name="group_id" type="idInt"/>
+      <xs:element name="tennhom" type="xs:string"/>
+      <xs:element name="mota" type="xs:string" minOccurs="0"/>
+      <xs:element name="chedo" type="chedoNhom"/>
+      <xs:element name="owner_id" type="idInt"/>
+      <xs:element name="ngaytao" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="groupDetailType">
+    <xs:sequence>
+      <xs:element name="group_membership_id" type="idInt"/>
+      <xs:element name="group_id" type="idInt"/>
+      <xs:element name="user_id" type="idInt"/>
+      <xs:element name="vaitro" type="vaiTroEnum"/>
+      <xs:element name="trangthai" type="trangThaiEnum"/>
+      <xs:element name="ngaythamgia" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="postType">
+    <xs:sequence>
+      <xs:element name="post_id" type="idInt"/>
+      <xs:element name="author_id" type="idInt"/>
+      <xs:element name="noidung" type="xs:string"/>
+      <xs:element name="chedohienthi" type="chedoHienThi"/>
+      <xs:element name="ngaytao" type="xs:dateTime"/>
+      <xs:element name="capnhat" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="commentType">
+    <xs:sequence>
+      <xs:element name="comment_id" type="idInt"/>
+      <xs:element name="post_id" type="idInt"/>
+      <xs:element name="author_id" type="idInt"/>
+      <xs:element name="noidung" type="xs:string"/>
+      <xs:element name="parent_comment_id" type="idInt" minOccurs="0"/>
+      <xs:element name="ngaytao" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="followType">
+    <xs:sequence>
+      <xs:element name="follow_id" type="idInt"/>
+      <xs:element name="follower_id" type="idInt"/>
+      <xs:element name="followee_id" type="idInt"/>
+      <xs:element name="tranthai" type="followTrangThai"/>
+      <xs:element name="ngaytao" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reactionType">
+    <xs:sequence>
+      <xs:element name="reaction_id" type="idInt"/>
+      <xs:element name="reactor_id" type="idInt"/>
+      <xs:element name="target_type" type="targetTypeEnum"/>
+      <xs:element name="target_post_id" type="idInt" minOccurs="0"/>
+      <xs:element name="target_comment_id" type="idInt" minOccurs="0"/>
+      <xs:element name="loaituongtac" type="reactionEnum"/>
+      <xs:element name="thoigian" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
