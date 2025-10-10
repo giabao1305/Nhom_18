@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mangxh xmlns="https://www.w3schools.com"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="https://www.w3schools.com mxh.xsd">
+
+   <!--  USER  -->
+  <user>
+    <user_id>101</user_id>
+    <email>ktpm2211052@ctu.edu.vn</email>
+    <matkhau>p1</matkhau>
+    <ngaytao>2025-09-25T09:10:00</ngaytao>
+    <trangthai>1</trangthai>
+    <tenhienthi>Trần Quốc An</tenhienthi>
+    <avatar>ktpm2211052.png</avatar>
+    <bio>SV KTPM2211052</bio>
+    <ngaysinh>2004-11-12</ngaysinh>
+    <gioitinh>nam</gioitinh>
+  </user>
+  <user>
+    <user_id>102</user_id>
+    <email>ktpm2211014@ctu.edu.vn</email>
+    <matkhau>p2</matkhau>
+    <ngaytao>2025-09-25T10:00:00</ngaytao>
+    <trangthai>1</trangthai>
+    <tenhienthi>Trần Gia Bảo</tenhienthi>
+    <avatar>ktpm2211014.png</avatar>
+    <bio>SV KTPM2211014</bio>
+    <ngaysinh>2004-05-13</ngaysinh>
+    <gioitinh>nam</gioitinh>
+  </user>
+  <user>
+    <user_id>103</user_id>
+    <email>ktpm2211050@ctu.edu.vn</email>
+    <matkhau>p3</matkhau>
+    <ngaytao>2025-09-25T10:30:00</ngaytao>
+    <trangthai>1</trangthai>
+    <tenhienthi>Lê Văn Hào</tenhienthi>
+    <avatar>ktpm2211050.png</avatar>
+    <bio>SV KTPM2211050</bio>
+    <ngaysinh>2004-01-31</ngaysinh>
+    <gioitinh>nam</gioitinh>
+  </user>
+  <user>
+    <user_id>104</user_id>
+    <email>ktpm2211001@ctu.edu.vn</email>
+    <matkhau>p4</matkhau>
+    <ngaytao>2025-09-26T08:00:00</ngaytao>
+    <trangthai>1</trangthai>
+    <tenhienthi>Nguyễn Lê Nhã Anh</tenhienthi>
+    <avatar>ktpm2211001.png</avatar>
+    <bio>SV KTPM2211001</bio>
+    <ngaysinh>2004-04-10</ngaysinh>
+    <gioitinh>nu</gioitinh>
+  </user>
+  <user>
+    <user_id>105</user_id>
+    <email>ktpm2211077@ctu.edu.vn</email>
+    <matkhau>p5</matkhau>
+    <ngaytao>2025-09-26T09:00:00</ngaytao>
+    <trangthai>1</trangthai>
+    <tenhienthi>Cao Nguyễn Gia Đạt</tenhienthi>
+    <avatar>ktpm2211077.png</avatar>
+    <bio>SV KTPM2211077</bio>
+    <ngaysinh>2004-12-03</ngaysinh>
+    <gioitinh>nam</gioitinh>
+  </user>
+  <user>
+    <user_id>106</user_id>
+    <email>ktpm2211037@ctu.edu.vn</email>
+    <matkhau>p6</matkhau>
+    <ngaytao>2025-09-27T09:00:00</ngaytao>
+    <trangthai>1</trangthai>
+    <tenhienthi>Trịnh Bảo Khang</tenhienthi>
+    <avatar>ktpm2211037.png</avatar>
+    <bio>SV KTPM2211037</bio>
+    <ngaysinh>2004-04-09</ngaysinh>
+    <gioitinh>nam</gioitinh>
+  </user>
+  <user>
+    <user_id>107</user_id>
+    <email>ktpm2211027@ctu.edu.vn</email>
+    <matkhau>p7</matkhau>
+    <ngaytao>2025-09-27T11:11:00</ngaytao>
+    <trangthai>1</trangthai>
+    <tenhienthi>Nguyễn Phát Tài</tenhienthi>
+    <avatar>ktpm2211027.png</avatar>
+    <bio>SV KTPM2211027</bio>
+    <ngaysinh>2004-04-25</ngaysinh>
+    <gioitinh>nam</gioitinh>
+  </user>
+
+  <!--  GROUP  -->
+  <group>
+    <group_id>201</group_id>
+    <tennhom>CTU Dev</tennhom>
+    <mota>Lập trình viên Cần Thơ</mota>
+    <chedo>cong_khai</chedo>
+    <owner_id>101</owner_id>
+    <ngaytao>2025-09-26T10:00:00</ngaytao>
+  </group>
+  <group>
+    <group_id>202</group_id>
+    <tennhom>Design Hub</tennhom>
+    <mota>Giao diện sáng tạo</mota>
+    <chedo>cong_khai</chedo>
+    <owner_id>102</owner_id>
+    <ngaytao>2025-09-26T11:00:00</ngaytao>
+  </group>
+  <group>
+    <group_id>203</group_id>
+    <tennhom>Game Talk</tennhom>
+    <mota>Cộng đồng game thủ</mota>
+    <chedo>ban_be</chedo>
+    <owner_id>103</owner_id>
+    <ngaytao>2025-09-26T12:00:00</ngaytao>
+  </group>
+  <group>
+    <group_id>204</group_id>
+    <tennhom>Photo Club</tennhom>
+    <mota>Nhiếp ảnh sinh viên</mota>
+    <chedo>cong_khai</chedo>
+    <owner_id>104</owner_id>
+    <ngaytao>2025-09-26T13:00:00</ngaytao>
+  </group>
+  <group>
+    <group_id>205</group_id>
+    <tennhom>Data Team</tennhom>
+    <mota>Phân tích dữ liệu</mota>
+    <chedo>bi_mat</chedo>
+    <owner_id>105</owner_id>
+    <ngaytao>2025-09-27T09:30:00</ngaytao>
+  </group>
+  <group>
+    <group_id>206</group_id>
+    <tennhom>Runner</tennhom>
+    <mota>Chạy bộ mỗi ngày</mota>
+    <chedo>ban_be</chedo>
+    <owner_id>106</owner_id>
+    <ngaytao>2025-09-27T10:00:00</ngaytao>
+  </group>
+  <group>
+    <group_id>207</group_id>
+    <tennhom>QA</tennhom>
+    <mota>Kiểm thử phần mềm</mota>
+    <chedo>cong_khai</chedo>
+    <owner_id>107</owner_id>
+    <ngaytao>2025-09-27T10:30:00</ngaytao>
+  </group>
+
+  <!--  GROUP_DETAIL  -->
+  <group_detail>
+    <group_membership_id>301</group_membership_id>
+    <group_id>201</group_id>
+    <user_id>101</user_id>
+    <vaitro>admin</vaitro>
+    <trangthai>active</trangthai>
+    <ngaythamgia>2025-09-26T10:05:00</ngaythamgia>
+  </group_detail>
+  <group_detail>
+    <group_membership_id>302</group_membership_id>
+    <group_id>201</group_id>
+    <user_id>102</user_id>
+    <vaitro>member</vaitro>
+    <trangthai>active</trangthai>
+    <ngaythamgia>2025-09-26T10:10:00</ngaythamgia>
+  </group_detail>
+  <group_detail>
+    <group_membership_id>303</group_membership_id>
+    <group_id>202</group_id>
+    <user_id>102</user_id>
+    <vaitro>admin</vaitro>
+    <trangthai>active</trangthai>
+    <ngaythamgia>2025-09-26T11:05:00</ngaythamgia>
+  </group_detail>
+  <group_detail>
+    <group_membership_id>304</group_membership_id>
+    <group_id>203</group_id>
+    <user_id>103</user_id>
+    <vaitro>admin</vaitro>
+    <trangthai>active</trangthai>
+    <ngaythamgia>2025-09-26T12:05:00</ngaythamgia>
+  </group_detail>
+  <group_detail>
+    <group_membership_id>305</group_membership_id>
+    <group_id>204</group_id>
+    <user_id>104</user_id>
+    <vaitro>admin</vaitro>
+    <trangthai>active</trangthai>
+    <ngaythamgia>2025-09-26T13:05:00</ngaythamgia>
+  </group_detail>
+  <group_detail>
+    <group_membership_id>306</group_membership_id>
+    <group_id>205</group_id>
+    <user_id>105</user_id>
+    <vaitro>admin</vaitro>
+    <trangthai>active</trangthai>
+    <ngaythamgia>2025-09-27T09:45:00</ngaythamgia>
+  </group_detail>
+  <group_detail>
+    <group_membership_id>307</group_membership_id>
+    <group_id>206</group_id>
+    <user_id>106</user_id>
+    <vaitro>admin</vaitro>
+    <trangthai>active</trangthai>
+    <ngaythamgia>2025-09-27T10:05:30</ngaythamgia>
+  </group_detail>
+
+  <!--  POST  -->
+  <post>
+    <post_id>901</post_id>
+    <author_id>101</author_id>
+    <noidung>Xin chao moi nguoi</noidung>
+    <chedohienthi>cong_khai</chedohienthi>
+    <ngaytao>2025-09-27T14:00:00</ngaytao>
+    <capnhat>2025-09-27T14:05:00</capnhat>
+  </post>
+  <post>
+    <post_id>902</post_id>
+    <author_id>102</author_id>
+    <noidung>Figma tips</noidung>
+    <chedohienthi>ban_be</chedohienthi>
+    <ngaytao>2025-09-27T15:00:00</ngaytao>
+    <capnhat>2025-09-27T15:10:00</capnhat>
+  </post>
+  <post>
+    <post_id>903</post_id>
+    <author_id>103</author_id>
+    <noidung>Game hay</noidung>
+    <chedohienthi>cong_khai</chedohienthi>
+    <ngaytao>2025-09-27T16:00:00</ngaytao>
+    <capnhat>2025-09-27T16:10:00</capnhat>
+  </post>
+  <post>
+    <post_id>904</post_id>
+    <author_id>104</author_id>
+    <noidung>Bo suu tap anh</noidung>
+    <chedohienthi>cong_khai</chedohienthi>
+    <ngaytao>2025-09-27T17:00:00</ngaytao>
+    <capnhat>2025-09-27T17:20:00</capnhat>
+  </post>
+  <post>
+    <post_id>905</post_id>
+    <author_id>105</author_id>
+    <noidung>Phan tich du lieu</noidung>
+    <chedohienthi>riêng_tư</chedohienthi>
+    <ngaytao>2025-09-27T18:00:00</ngaytao>
+    <capnhat>2025-09-27T18:05:00</capnhat>
+  </post>
+  <post>
+    <post_id>906</post_id>
+    <author_id>106</author_id>
+    <noidung>Chay 5km</noidung>
+    <chedohienthi>ban_be</chedohienthi>
+    <ngaytao>2025-09-27T19:00:00</ngaytao>
+    <capnhat>2025-09-27T19:05:00</capnhat>
+  </post>
+  <post>
+    <post_id>907</post_id>
+    <author_id>107</author_id>
+    <noidung>Test case hay</noidung>
+    <chedohienthi>cong_khai</chedohienthi>
+    <ngaytao>2025-09-27T20:00:00</ngaytao>
+    <capnhat>2025-09-27T20:10:00</capnhat>
+  </post>
+
+  <!--  COMMENT  -->
+  <comment>
+    <comment_id>5001</comment_id>
+    <post_id>901</post_id>
+    <author_id>102</author_id>
+    <noidung>Chao ban!</noidung>
+    <ngaytao>2025-09-27T14:06:00</ngaytao>
+  </comment>
+  <comment>
+    <comment_id>5002</comment_id>
+    <post_id>901</post_id>
+    <author_id>103</author_id>
+    <noidung>Welcome</noidung>
+    <parent_comment_id>5001</parent_comment_id>
+    <ngaytao>2025-09-27T14:07:00</ngaytao>
+  </comment>
+  <comment>
+    <comment_id>5003</comment_id>
+    <post_id>902</post_id>
+    <author_id>101</author_id>
+    <noidung>Hay do</noidung>
+    <ngaytao>2025-09-27T15:12:00</ngaytao>
+  </comment>
+  <comment>
+    <comment_id>5004</comment_id>
+    <post_id>903</post_id>
+    <author_id>104</author_id>
+    <noidung>Game gi?</noidung>
+    <ngaytao>2025-09-27T16:12:00</ngaytao>
+  </comment>
+  <comment>
+    <comment_id>5005</comment_id>
+    <post_id>904</post_id>
+    <author_id>105</author_id>
+    <noidung>Dep qua</noidung>
+    <ngaytao>2025-09-27T17:22:00</ngaytao>
+  </comment>
+  <comment>
+    <comment_id>5006</comment_id>
+    <post_id>906</post_id>
+    <author_id>107</author_id>
+    <noidung>Tuyet</noidung>
+    <ngaytao>2025-09-27T19:06:00</ngaytao>
+  </comment>
+  <comment>
+    <comment_id>5007</comment_id>
+    <post_id>907</post_id>
+    <author_id>106</author_id>
+    <noidung>Cam on</noidung>
+    <ngaytao>2025-09-27T20:12:00</ngaytao>
+  </comment>
+
+  <!--  FOLLOW  -->
+  <follow>
+    <follow_id>801</follow_id>
+    <follower_id>101</follower_id>
+    <followee_id>102</followee_id>
+    <tranthai>chap_nhan</tranthai>
+    <ngaytao>2025-09-26T09:00:00</ngaytao>
+  </follow>
+  <follow>
+    <follow_id>802</follow_id>
+    <follower_id>102</follower_id>
+    <followee_id>101</followee_id>
+    <tranthai>chap_nhan</tranthai>
+    <ngaytao>2025-09-26T09:05:00</ngaytao>
+  </follow>
+  <follow>
+    <follow_id>803</follow_id>
+    <follower_id>103</follower_id>
+    <followee_id>101</followee_id>
+    <tranthai>cho_duyet</tranthai>
+    <ngaytao>2025-09-26T10:00:00</ngaytao>
+  </follow>
+  <follow>
+    <follow_id>804</follow_id>
+    <follower_id>104</follower_id>
+    <followee_id>103</followee_id>
+    <tranthai>chap_nhan</tranthai>
+    <ngaytao>2025-09-26T11:00:00</ngaytao>
+  </follow>
+  <follow>
+    <follow_id>805</follow_id>
+    <follower_id>105</follower_id>
+    <followee_id>104</followee_id>
+    <tranthai>chan</tranthai>
+    <ngaytao>2025-09-26T12:00:00</ngaytao>
+  </follow>
+  <follow>
+    <follow_id>806</follow_id>
+    <follower_id>106</follower_id>
+    <followee_id>101</followee_id>
+    <tranthai>chap_nhan</tranthai>
+    <ngaytao>2025-09-26T13:00:00</ngaytao>
+  </follow>
+  <follow>
+    <follow_id>807</follow_id>
+    <follower_id>107</follower_id>
+    <followee_id>106</followee_id>
+    <tranthai>chap_nhan</tranthai>
+    <ngaytao>2025-09-26T13:30:00</ngaytao>
+  </follow>
+
+  <!--  REACTION  -->
+  <reaction>
+    <reaction_id>6001</reaction_id>
+    <reactor_id>101</reactor_id>
+    <target_type>bai_viet</target_type>
+    <target_post_id>901</target_post_id>
+    <loaituongtac>thich</loaituongtac>
+    <thoigian>2025-09-27T14:06:10</thoigian>
+  </reaction>
+  <reaction>
+    <reaction_id>6002</reaction_id>
+    <reactor_id>102</reactor_id>
+    <target_type>binh_luan</target_type>
+    <target_comment_id>5001</target_comment_id>
+    <loaituongtac>tym</loaituongtac>
+    <thoigian>2025-09-27T14:06:20</thoigian>
+  </reaction>
+  <reaction>
+    <reaction_id>6003</reaction_id>
+    <reactor_id>103</reactor_id>
+    <target_type>bai_viet</target_type>
+    <target_post_id>902</target_post_id>
+    <loaituongtac>wow</loaituongtac>
+    <thoigian>2025-09-27T15:13:00</thoigian>
+  </reaction>
+  <reaction>
+    <reaction_id>6004</reaction_id>
+    <reactor_id>104</reactor_id>
+    <target_type>bai_viet</target_type>
+    <target_post_id>903</target_post_id>
+    <loaituongtac>care</loaituongtac>
+    <thoigian>2025-09-27T16:13:00</thoigian>
+  </reaction>
+  <reaction>
+    <reaction_id>6005</reaction_id>
+    <reactor_id>105</reactor_id>
+    <target_type>bai_viet</target_type>
+    <target_post_id>904</target_post_id>
+    <loaituongtac>thich</loaituongtac>
+    <thoigian>2025-09-27T17:23:00</thoigian>
+  </reaction>
+  <reaction>
+    <reaction_id>6006</reaction_id>
+    <reactor_id>106</reactor_id>
+    <target_type>binh_luan</target_type>
+    <target_comment_id>5006</target_comment_id>
+    <loaituongtac>cuoi</loaituongtac>
+    <thoigian>2025-09-27T19:06:30</thoigian>
+  </reaction>
+  <reaction>
+    <reaction_id>6007</reaction_id>
+    <reactor_id>107</reactor_id>
+    <target_type>bai_viet</target_type>
+    <target_post_id>907</target_post_id>
+    <loaituongtac>wow</loaituongtac>
+    <thoigian>2025-09-27T20:12:30</thoigian>
+  </reaction>
+
+</mangxh>
