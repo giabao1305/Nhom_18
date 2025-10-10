@@ -1,0 +1,59 @@
+<!ELEMENT mangxh (user*, group*, group_detail*, post*, comment*, follow*, reaction*)>
+
+<!--  user  -->
+<!ELEMENT user (user_id, email, matkhau, ngaytao, trangthai, tenhienthi, avatar?, bio?, ngaysinh?, gioitinh?)>
+<!ELEMENT user_id (#PCDATA)>
+<!ELEMENT email (#PCDATA)>
+<!ELEMENT matkhau (#PCDATA)>
+<!ELEMENT ngaytao (#PCDATA)>
+<!ELEMENT trangthai (#PCDATA)>
+<!ELEMENT tenhienthi (#PCDATA)>
+<!ELEMENT avatar (#PCDATA)>
+<!ELEMENT bio (#PCDATA)>
+<!ELEMENT ngaysinh (#PCDATA)>
+<!ELEMENT gioitinh (#PCDATA)>
+
+<!--  group  -->
+<!ELEMENT group (group_id, tennhom, mota?, chedo, owner_id, ngaytao)>
+<!ELEMENT group_id (#PCDATA)>
+<!ELEMENT tennhom (#PCDATA)>
+<!ELEMENT mota (#PCDATA)>
+<!ELEMENT chedo (#PCDATA)>
+<!ELEMENT owner_id (#PCDATA)>
+<!ELEMENT ngaytao (#PCDATA)>
+
+<!--  group_detail  -->
+<!ELEMENT group_detail (group_membership_id, group_id, user_id, vaitro, trangthai, ngaythamgia)>
+<!ELEMENT group_membership_id (#PCDATA)>
+<!ELEMENT vaitro (#PCDATA)>
+<!ELEMENT ngaythamgia (#PCDATA)>
+
+<!--  post  -->
+<!ELEMENT post (post_id, author_id, noidung, chedohienthi, ngaytao, capnhat?)>
+<!ELEMENT post_id (#PCDATA)>
+<!ELEMENT author_id (#PCDATA)>
+<!ELEMENT noidung (#PCDATA)>
+<!ELEMENT chedohienthi (#PCDATA)>
+<!ELEMENT capnhat (#PCDATA)>
+
+<!--  comment  -->
+<!ELEMENT comment (comment_id, post_id, author_id, noidung, parent_comment_id?, ngaytao)>
+<!ELEMENT comment_id (#PCDATA)>
+<!ELEMENT parent_comment_id (#PCDATA)>
+
+<!--  follow  -->
+<!ELEMENT follow (follow_id, follower_id, followee_id, tranthai, ngaytao)>
+<!ELEMENT follow_id (#PCDATA)>
+<!ELEMENT follower_id (#PCDATA)>
+<!ELEMENT followee_id (#PCDATA)>
+<!ELEMENT tranthai (#PCDATA)>
+
+<!--  reaction  -->
+<!ELEMENT reaction (reaction_id, reactor_id, target_type, target_post_id?, target_comment_id?, loaituongtac, thoigian)>
+<!ELEMENT reaction_id (#PCDATA)>
+<!ELEMENT reactor_id (#PCDATA)>
+<!ELEMENT target_type (#PCDATA)>
+<!ELEMENT target_post_id (#PCDATA)>
+<!ELEMENT target_comment_id (#PCDATA)>
+<!ELEMENT loaituongtac (#PCDATA)>
+<!ELEMENT thoigian (#PCDATA)>
