@@ -75,7 +75,88 @@
       <xs:enumeration value="binh_luan"/>
     </xs:restriction>
   </xs:simpleType>
+  
+<!--  Complex types  -->
+  <xs:complexType name="userType">
+    <xs:sequence>
+      <xs:element name="user_id" type="idInt"/>
+      <xs:element name="email" type="xs:string"/>
+      <xs:element name="matkhau" type="xs:string"/>
+      <xs:element name="ngaytao" type="xs:dateTime"/>
+      <xs:element name="trangthai" type="xs:byte"/>
+      <xs:element name="tenhienthi" type="xs:string"/>
+      <xs:element name="avatar" type="xs:string" minOccurs="0"/>
+      <xs:element name="bio" type="xs:string" minOccurs="0"/>
+      <xs:element name="ngaysinh" type="xs:date" minOccurs="0"/>
+      <xs:element name="gioitinh" type="genderEnum" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
 
+  <xs:complexType name="groupType">
+    <xs:sequence>
+      <xs:element name="group_id" type="idInt"/>
+      <xs:element name="tennhom" type="xs:string"/>
+      <xs:element name="mota" type="xs:string" minOccurs="0"/>
+      <xs:element name="chedo" type="chedoNhom"/>
+      <xs:element name="owner_id" type="idInt"/>
+      <xs:element name="ngaytao" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="groupDetailType">
+    <xs:sequence>
+      <xs:element name="group_membership_id" type="idInt"/>
+      <xs:element name="group_id" type="idInt"/>
+      <xs:element name="user_id" type="idInt"/>
+      <xs:element name="vaitro" type="vaiTroEnum"/>
+      <xs:element name="trangthai" type="trangThaiEnum"/>
+      <xs:element name="ngaythamgia" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="postType">
+    <xs:sequence>
+      <xs:element name="post_id" type="idInt"/>
+      <xs:element name="author_id" type="idInt"/>
+      <xs:element name="noidung" type="xs:string"/>
+      <xs:element name="chedohienthi" type="chedoHienThi"/>
+      <xs:element name="ngaytao" type="xs:dateTime"/>
+      <xs:element name="capnhat" type="xs:dateTime" minOccurs="0"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="commentType">
+    <xs:sequence>
+      <xs:element name="comment_id" type="idInt"/>
+      <xs:element name="post_id" type="idInt"/>
+      <xs:element name="author_id" type="idInt"/>
+      <xs:element name="noidung" type="xs:string"/>
+      <xs:element name="parent_comment_id" type="idInt" minOccurs="0"/>
+      <xs:element name="ngaytao" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="followType">
+    <xs:sequence>
+      <xs:element name="follow_id" type="idInt"/>
+      <xs:element name="follower_id" type="idInt"/>
+      <xs:element name="followee_id" type="idInt"/>
+      <xs:element name="tranthai" type="followTrangThai"/>
+      <xs:element name="ngaytao" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="reactionType">
+    <xs:sequence>
+      <xs:element name="reaction_id" type="idInt"/>
+      <xs:element name="reactor_id" type="idInt"/>
+      <xs:element name="target_type" type="targetTypeEnum"/>
+      <xs:element name="target_post_id" type="idInt" minOccurs="0"/>
+      <xs:element name="target_comment_id" type="idInt" minOccurs="0"/>
+      <xs:element name="loaituongtac" type="reactionEnum"/>
+      <xs:element name="thoigian" type="xs:dateTime"/>
+    </xs:sequence>
+  </xs:complexType>
   <!--  Root  -->
   <xs:element name="mangxh">
     <xs:complexType>
@@ -92,8 +173,8 @@
 
     <!--  Keys  -->
     <xs:key name="user_key">
-      <xs:selector xpath="user"/>
-      <xs:field xpath="user_id"/>
+      <xs:selector xpath="user"/>    <!-- bảng  -->
+      <xs:field xpath="user_id"/>   <!-- cột  -->
     </xs:key>
 
     <xs:key name="group_key">
@@ -180,94 +261,14 @@
     <xs:keyref name="reaction_post_fk" refer="post_key">
     <xs:selector xpath="reaction"/>
         <xs:field xpath="target_post_id"/>
-</xs:keyref>
-
-  <xs:keyref name="reaction_comment_fk" refer="comment_key">
-  <xs:selector xpath="reaction"/>
-  <xs:field xpath="target_comment_id"/>
-</xs:keyref>
+    </xs:keyref>
+    
+    <xs:keyref name="reaction_comment_fk" refer="comment_key">
+      <xs:selector xpath="reaction"/>
+      <xs:field xpath="target_comment_id"/>
+    </xs:keyref>
   </xs:element>
 
-  <!--  Complex types  -->
-  <xs:complexType name="userType">
-    <xs:sequence>
-      <xs:element name="user_id" type="idInt"/>
-      <xs:element name="email" type="xs:string"/>
-      <xs:element name="matkhau" type="xs:string"/>
-      <xs:element name="ngaytao" type="xs:dateTime"/>
-      <xs:element name="trangthai" type="xs:byte"/>
-      <xs:element name="tenhienthi" type="xs:string"/>
-      <xs:element name="avatar" type="xs:string" minOccurs="0"/>
-      <xs:element name="bio" type="xs:string" minOccurs="0"/>
-      <xs:element name="ngaysinh" type="xs:date" minOccurs="0"/>
-      <xs:element name="gioitinh" type="genderEnum" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
 
-  <xs:complexType name="groupType">
-    <xs:sequence>
-      <xs:element name="group_id" type="idInt"/>
-      <xs:element name="tennhom" type="xs:string"/>
-      <xs:element name="mota" type="xs:string" minOccurs="0"/>
-      <xs:element name="chedo" type="chedoNhom"/>
-      <xs:element name="owner_id" type="idInt"/>
-      <xs:element name="ngaytao" type="xs:dateTime"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="groupDetailType">
-    <xs:sequence>
-      <xs:element name="group_membership_id" type="idInt"/>
-      <xs:element name="group_id" type="idInt"/>
-      <xs:element name="user_id" type="idInt"/>
-      <xs:element name="vaitro" type="vaiTroEnum"/>
-      <xs:element name="trangthai" type="trangThaiEnum"/>
-      <xs:element name="ngaythamgia" type="xs:dateTime"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="postType">
-    <xs:sequence>
-      <xs:element name="post_id" type="idInt"/>
-      <xs:element name="author_id" type="idInt"/>
-      <xs:element name="noidung" type="xs:string"/>
-      <xs:element name="chedohienthi" type="chedoHienThi"/>
-      <xs:element name="ngaytao" type="xs:dateTime"/>
-      <xs:element name="capnhat" type="xs:dateTime" minOccurs="0"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="commentType">
-    <xs:sequence>
-      <xs:element name="comment_id" type="idInt"/>
-      <xs:element name="post_id" type="idInt"/>
-      <xs:element name="author_id" type="idInt"/>
-      <xs:element name="noidung" type="xs:string"/>
-      <xs:element name="parent_comment_id" type="idInt" minOccurs="0"/>
-      <xs:element name="ngaytao" type="xs:dateTime"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="followType">
-    <xs:sequence>
-      <xs:element name="follow_id" type="idInt"/>
-      <xs:element name="follower_id" type="idInt"/>
-      <xs:element name="followee_id" type="idInt"/>
-      <xs:element name="tranthai" type="followTrangThai"/>
-      <xs:element name="ngaytao" type="xs:dateTime"/>
-    </xs:sequence>
-  </xs:complexType>
-
-  <xs:complexType name="reactionType">
-    <xs:sequence>
-      <xs:element name="reaction_id" type="idInt"/>
-      <xs:element name="reactor_id" type="idInt"/>
-      <xs:element name="target_type" type="targetTypeEnum"/>
-      <xs:element name="target_post_id" type="idInt" minOccurs="0"/>
-      <xs:element name="target_comment_id" type="idInt" minOccurs="0"/>
-      <xs:element name="loaituongtac" type="reactionEnum"/>
-      <xs:element name="thoigian" type="xs:dateTime"/>
-    </xs:sequence>
-  </xs:complexType>
 
 </xs:schema>
